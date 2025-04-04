@@ -276,7 +276,7 @@ Los arreglos son estructuras de datos que nos permiten almacenar múltiples valo
 
 ### 7.1 Arreglos unidimensionales (Vectores)
 
-Un vector es un arreglo de una sola dimensión, como una lista de elementos. En PSeInt, podemos declarar vectores y acceder a sus elementos mediante índices.
+Un vector es un arreglo de una sola dimensión, como una lista de elementos. En PSeInt, podemos declarar vectores y acceder a sus elementos mediante índices. **Es importante recordar que en PSeInt los índices de los arreglos comienzan en 1, no en 0.**
 
 **Sintaxis básica para declarar un vector:**
 ```
@@ -295,14 +295,14 @@ Proceso ManipularVector
     Dimension numeros[5]
     
     // Asignar valores al vector
-    Para i <- 0 Hasta 4 Con Paso 1 Hacer
-        Escribir "Ingresa el número ", i+1, ": "
+    Para i <- 1 Hasta 5 Con Paso 1 Hacer
+        Escribir "Ingresa el número ", i, ": "
         Leer numeros[i]
     FinPara
     
     // Calcular la suma de los elementos
     suma <- 0
-    Para i <- 0 Hasta 4 Con Paso 1 Hacer
+    Para i <- 1 Hasta 5 Con Paso 1 Hacer
         suma <- suma + numeros[i]
     FinPara
     
@@ -333,8 +333,8 @@ Proceso ManipularMatriz
     Dimension matriz[3,3]
     
     // Llenar la matriz con valores
-    Para fila <- 0 Hasta 2 Con Paso 1 Hacer
-        Para columna <- 0 Hasta 2 Con Paso 1 Hacer
+    Para fila <- 1 Hasta 3 Con Paso 1 Hacer
+        Para columna <- 1 Hasta 3 Con Paso 1 Hacer
             Escribir "Ingresa el valor para la posición [", fila, ",", columna, "]: "
             Leer matriz[fila,columna]
         FinPara
@@ -342,8 +342,8 @@ Proceso ManipularMatriz
     
     // Mostrar la matriz
     Escribir "La matriz ingresada es:"
-    Para fila <- 0 Hasta 2 Con Paso 1 Hacer
-        Para columna <- 0 Hasta 2 Con Paso 1 Hacer
+    Para fila <- 1 Hasta 3 Con Paso 1 Hacer
+        Para columna <- 1 Hasta 3 Con Paso 1 Hacer
             Escribir Sin Saltar matriz[fila,columna], " "
         FinPara
         Escribir ""  // Salto de línea al final de cada fila
