@@ -492,3 +492,66 @@ Proceso ValidarEntrada
     FinSegun
 FinProceso
 ```
+
+### 9.4 Ejemplos de bucles en la vida real
+
+Los bucles no son solo conceptos de programación, sino que están presentes en nuestra vida cotidiana. Reconocer estos patrones nos ayuda a entender mejor su aplicación en la programación:
+
+#### Hacer ejercicio
+"Hacer 20 flexiones" → Esto es un bucle Para (for) donde sabes exactamente cuántas veces se repetirá.
+
+```
+Para i Desde 1 Hasta 20 Hacer
+    Escribir "Flexión número: ", i
+FinPara
+```
+
+#### Lavar platos
+"Enjabonar cada plato sucio" → Bucle Mientras (while) que continúa hasta que no queden platos.
+
+```
+Mientras QuedenPlatosSucios Hacer
+    LavarSiguientePlato
+FinMientras
+```
+
+#### Estudiar para un examen
+"Repasar temas hasta sentirte preparado" → Bucle Repetir (do-while) que se ejecuta al menos una vez.
+
+```
+Repetir
+    RepasarTema()
+    Preguntar "¿Te sientes preparado? (S/N)"
+Hasta Que Respuesta == "S"
+```
+
+#### Buscar llaves perdidas
+"Revisar cada habitación hasta encontrarlas" → Bucle con condición.
+
+```
+encontrado <- Falso
+Mientras No encontrado Hacer
+    BuscarEnSiguienteHabitación()
+    Si LlavesEncontradas Entonces
+        encontrado <- Verdadero
+    FinSi
+FinMientras
+```
+
+#### Comer cereal
+"Tomar una cucharada mientras haya cereal en el tazón" → Bucle con condición decremental.
+
+```
+Mientras QuedeCerealEnElTazon Hacer
+    ComerCucharada()
+FinMientras
+```
+
+#### ¿Por qué son bucles?
+En todos estos casos hay:
+
+- Repetición de una acción
+- Condición para continuar o detenerse
+- Progreso hacia un estado final (platos limpios, estudio completo, etc.)
+
+Los bucles en programación funcionan igual: automatizan tareas repetitivas hasta cumplir una condición específica.
