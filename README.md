@@ -366,3 +366,129 @@ Aplicaciones del pseudocódigo en la vida real:
 - Documentación de procedimientos
 - Enseñanza de conceptos de programación
 - Desarrollo de prototipos rápidos de soluciones
+
+## 9. Bucles (Ciclos) en PSeInt
+
+Los bucles o ciclos son estructuras de control que nos permiten repetir un bloque de código varias veces. Son fundamentales para automatizar tareas repetitivas y procesar colecciones de datos. PSeInt ofrece tres tipos principales de bucles.
+
+### 9.1 Bucle Para (For)
+
+El bucle `Para` se utiliza cuando conocemos de antemano el número exacto de iteraciones que queremos realizar. Es ideal para recorrer arreglos o ejecutar código un número específico de veces.
+
+**Sintaxis básica:**
+```
+Para <variable_control> <- <valor_inicial> Hasta <valor_final> Con Paso <incremento> Hacer
+    <instrucciones a repetir>
+FinPara
+```
+
+### Ejemplo práctico: Tabla de multiplicar
+
+```
+Proceso TablaMultiplicar
+    // Declarar variables
+    Definir numero, i, resultado Como Entero
+    
+    // Pedir número al usuario
+    Escribir "Ingresa un número para ver su tabla de multiplicar: "
+    Leer numero
+    
+    // Generar tabla de multiplicar con bucle Para
+    Escribir "Tabla de multiplicar del ", numero, ":"
+    Para i <- 1 Hasta 10 Con Paso 1 Hacer
+        resultado <- numero * i
+        Escribir numero, " x ", i, " = ", resultado
+    FinPara
+FinProceso
+```
+
+### 9.2 Bucle Mientras (While)
+
+El bucle `Mientras` ejecuta un bloque de código mientras una condición específica sea verdadera. A diferencia del bucle `Para`, no sabemos necesariamente cuántas iteraciones se realizarán, ya que depende de cuándo la condición se vuelva falsa.
+
+**Sintaxis básica:**
+```
+Mientras <condición> Hacer
+    <instrucciones a repetir>
+FinMientras
+```
+
+### Ejemplo práctico: Adivinar un número
+
+```
+Proceso AdivinarNumero
+    // Declarar variables
+    Definir numeroSecreto, intento, intentosRealizados Como Entero
+    
+    // Inicializar variables
+    numeroSecreto <- 7  // Podría ser aleatorio en versiones avanzadas
+    intentosRealizados <- 0
+    
+    // Bucle mientras para el juego
+    Mientras intento <> numeroSecreto Hacer
+        // Pedir número al usuario
+        Escribir "Adivina el número secreto (entre 1 y 10): "
+        Leer intento
+        
+        // Incrementar contador de intentos
+        intentosRealizados <- intentosRealizados + 1
+        
+        // Dar pistas
+        Si intento < numeroSecreto Entonces
+            Escribir "El número secreto es mayor"
+        Sino
+            Si intento > numeroSecreto Entonces
+                Escribir "El número secreto es menor"
+            FinSi
+        FinSi
+    FinMientras
+    
+    // Mostrar resultado
+    Escribir "¡Felicidades! Adivinaste el número en ", intentosRealizados, " intentos"
+FinProceso
+```
+
+### 9.3 Bucle Repetir-Hasta Que (Do-While)
+
+El bucle `Repetir-Hasta Que` es similar al bucle `Mientras`, pero garantiza que el bloque de código se ejecute al menos una vez, ya que la condición se evalúa al final de cada iteración, no al principio.
+
+**Sintaxis básica:**
+```
+Repetir
+    <instrucciones a repetir>
+Hasta Que <condición>
+```
+
+### Ejemplo práctico: Validación de entrada
+
+```
+Proceso ValidarEntrada
+    // Declarar variables
+    Definir opcion Como Entero
+    
+    // Bucle Repetir para validar entrada
+    Repetir
+        // Mostrar menú y pedir opción
+        Escribir "Selecciona una opción (1-3): "
+        Escribir "1 - Ver instrucciones"
+        Escribir "2 - Iniciar juego"
+        Escribir "3 - Salir"
+        Leer opcion
+        
+        // Verificar si la opción es válida
+        Si opcion < 1 O opcion > 3 Entonces
+            Escribir "Opción inválida. Intenta nuevamente."
+        FinSi
+    Hasta Que opcion >= 1 Y opcion <= 3
+    
+    // Procesar opción válida
+    Segun opcion Hacer
+        Caso 1:
+            Escribir "Instrucciones: Sigue los pasos en pantalla..."
+        Caso 2:
+            Escribir "Iniciando juego..."
+        Caso 3:
+            Escribir "Saliendo del programa..."
+    FinSegun
+FinProceso
+```
